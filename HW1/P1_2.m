@@ -1,7 +1,7 @@
 % Program P1_2
 % Generation of a complex exponential sequence
 clf;
-c = -(1/12)+(pi/6)*i;
+c = (1/12)+(pi/6)*1i;
 K = 2;
 n = 0:40;
 x = K*exp(c*n);
