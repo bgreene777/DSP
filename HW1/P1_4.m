@@ -1,16 +1,16 @@
-% Program P1_4
+% Program P1_4 - stairs
 % Generation of a sinusoidal sequence
-n = 0:40;	
-f = 0.1;			
-phase = 0;			
-A = 1.5;			
+n = 0:49;	
+f = 0.08;			
+phase = -pi/2;			
+A = 2.5;			
 arg = 2*pi*f*n - phase; 
 x = A*cos(arg);
 clf;			% Clear old graph
-stem(n,x);		% Plot the generated sequence
-axis([0 40 -2 2]);
+stairs(n,x);		% Plot the generated sequence
+axis([0 50 -3 3]);
 grid; 
-title('Sinusoidal Sequence');
+title('Sinusoidal Sequence Stairs');
 xlabel('Time index n');
 ylabel('Amplitude');
 axis;
