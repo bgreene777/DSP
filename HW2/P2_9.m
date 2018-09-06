@@ -1,10 +1,10 @@
-% Program P2_9
+% Program P2_9 - modified for Q2.35
 % Generate the input sequence
 clf;
-n = 0:299;
-x1 = cos(2*pi*10*n/256);
-x2 = cos(2*pi*100*n/256);
-x = x1+x2;
+n = 0:300;
+a = pi/2/300; b = 0;
+arg = a*n.*n + b*n;
+x = cos(arg);
 % Compute the output sequences
 num1 = [0.5 0.27 0.77];
 y1 = filter(num1,1,x); % Output of System #1
