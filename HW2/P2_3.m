@@ -1,4 +1,4 @@
-% Program P2_3
+% Program P2_3 - modified for Q2.18
 % Generate the input sequences
 clf;
 n = 0:40;
@@ -16,9 +16,9 @@ y = zeros(1, 41);
 y1 = zeros(1, 41);
 y2 = zeros(1, 41);
 for i = 2:40
-    y(i) = x(i) * x(i-1);    % y = x[n]x[n-1]
-    y1(i) = x1(i) * x1(i-1); % y1 = x1[n]x1[n-1]
-    y2(i) = x2(i) * x2(i-1); % y2 = x2[n]x2[n-1]
+    y(i) = i * x(i) + x(i-1);    % y = nx[n]x[n-1]
+    y1(i) = i * x1(i) + x1(i-1); % y1 = nx1[n]x1[n-1]
+    y2(i) = i * x2(i) + x2(i-1); % y2 = nx2[n]x2[n-1]
 end
 yt = a*y1 + b*y2; 
 d = y - yt; % Compute the difference output d[n]
