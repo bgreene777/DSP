@@ -1,8 +1,8 @@
-% Program P2_8
+% Program P2_8 - modified for Q2.33
 % Stability test based on the sum of the absolute 
 % values of the impulse response samples
 clf;
-num = [1 -0.8]; den = [1 1.5  0.9];
+num = [1 -4.0 3.0]; den = [1 -1.7 1.0];
 N = 200;
 h = impz(num,den,N+1);
 parsum = 0;
