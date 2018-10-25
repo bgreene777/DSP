@@ -3,8 +3,8 @@
 clf;
 w = -pi:2*pi/255:pi; % frequency vector
 wo = 0.4*pi; % fundamental frequency
-D = 15; % amount of time shift
-num = [1 2 3]; % input sequence
+D = 5; % amount of time shift
+num = [1 2 3 4 5 6 7 8 9]; % input sequence
 h1 = freqz(num, 1, w); % DTFT of original sequence
 h2 = freqz([zeros(1,D) num], 1, w); % DTFT of time-shifted sequence
 % plot DTFT magnitude spectrum of original sequnce

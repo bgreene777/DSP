@@ -3,7 +3,7 @@
 clf;
 w = -pi:2*pi/255:pi; % frequency vector
 wo = -0.5*pi; % amount of frequency shift
-num1 = [1 3 5 7]; % input sequence coefficients
+num1 = [1 3 5 7 9 11 13 15 17]; % input sequence coefficients
 L = length(num1); % length of input sequence
 h1 = freqz(num1, 1, w); % DTFT of input sequence
 n = 0:L-1; % index vector
@@ -33,3 +33,4 @@ plot(w/pi,angle(h2));grid
 title('Phase Spectrum of Frequency-Shifted Sequence')
 xlabel('\omega / \pi')
 ylabel('Phase [radians]')
+
