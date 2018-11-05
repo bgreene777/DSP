@@ -1,10 +1,11 @@
-% Program P3_1 modified for Q3.46
+% Program P3_1 modified for Q4.2
 % Evaluation of the DTFT 
 clf;
 % Compute the frequency samples of the DTFT
 w = 0:pi/511:pi;
-% N = 512;
-num = [2 5 9 5 3]; den = [5 45 2 1 1];
+%M = 7;
+num = [0.15 0 -0.15]; 
+den = [0.7 -0.5 1];
 h = freqz(num, den, w);
 % Plot the DTFT
 subplot(2,1,1)
