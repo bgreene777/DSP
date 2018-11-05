@@ -1,8 +1,9 @@
-% Program P4_2
-% Gain Response of a Moving Average Lowpass Filter
+% Program P4_2 - modified for Q4.13
+% Gain Response of a Moving Average Highpass Filter
 clf;
-M = 2;
-num = ones(1,M)/M;
+M = 5;
+n = 0:M-1;
+num = (-1).^n .* ones(1,M)/M;
 [g,w] = gain(num,1);
 plot(w/pi,g);grid
 axis([0 1 -50 0.5])
