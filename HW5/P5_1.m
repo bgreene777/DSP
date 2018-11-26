@@ -3,7 +3,7 @@
 % in the Time-Domain
 clf;
 t = 0:0.0005:1;
-f = 13;
+f = 7;
 xa = cos(2*pi*f*t);
 subplot(2,1,1)
 plot(t,xa);grid

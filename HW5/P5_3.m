@@ -16,7 +16,7 @@ xlabel('Frequency, kHz');ylabel('Amplitude');
 title('|X_{a}(j\Omega)|');
 axis([0 5/pi 0 2]);
 subplot(2,2,3)
-T = 1;
+T = 1.5;
 n = 0:T:10;
 xs = 2*n.*exp(-n);
 k = 0:length(n)-1;
@@ -26,7 +26,7 @@ title('Discrete-time signal x[n]');
 subplot(2,2,4)
 wd = 0:pi/255:pi;
 hd = freqz(xs,1,wd);
-plot(wd/(T*pi), T*abs(hd));grid;
+plot(wd/(T*2*pi), T*abs(hd));grid;
 xlabel('Frequency, kHz');ylabel('Amplitude');
 title('|X(e^{j\omega})|');
-axis([0 1/T 0 2])
+axis([0 0.5/T 0 2])
