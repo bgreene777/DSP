@@ -1,12 +1,18 @@
-% Program P7_1 - unwrap
+% Program P7_1 - cheby2 highpass
 clear
 clc
-% Design of a Butterworth Bandstop Digital Filter
-Ws = 0.4; Wp = 0.2; Rp = 0.5; Rs = 40;
+% Design of a cheby2 highpass Digital Filter
+FT = 3500;
+Fp = 1050;
+Fs = 600;
+Rp = 1;
+Rs = 50;
+Wp = 2*Fp/FT;
+Ws = 2*Fs/FT;
 % Estimate the Filter Order
-[N1, Wn1] = cheb1ord(Wp, Ws, Rp, Rs); 
+[N1, Wn1] = cheb2ord(Wp, Ws, Rp, Rs); 
 % Design the Filter
-[num,den] = cheby1(N1,Rp, Wn1);
+[num,den] = cheby2(N1,Rs, Wn1, 'high');
 % Frequency response
 wp = 0:pi/1023:pi;
 H = freqz(num, den, wp);
@@ -22,7 +28,7 @@ plot(w/pi,g);
 grid 
 axis([0 1 -60 5]);
 xlabel('\omega /\pi'); ylabel('Gain in dB');
-title('Gain Response of a Type 1 Chebyshev Lowpass Filter');
+title('Gain Response of a Type 2 Chebyshev Highpass Filter');
 % Plot
 figure(2);
 clf
@@ -30,7 +36,7 @@ plot(wp/pi, H_unwrap)
 grid
 xlabel('\omega /\pi')
 ylabel('Unwrapped phase [rad]')
-title('Unwrapped phase response - Type 1 Chebyshev Lowpass Filter')
+title('Unwrapped phase response - Type 2 Chebyshev Highpass Filter')
 % group delay
 gd = grpdelay(num, den, wp);
 figure(3);
@@ -39,6 +45,6 @@ plot(wp/pi, gd)
 grid
 xlabel('\omega /\pi')
 ylabel('Group delay [s]')
-title('Group delay - Type 1 Chebyshev Lowpass Filter')
-ylim([0 20])
+title('Group delay - Type 2 Chebyshev Highpass Filter')
+ylim([0 6])
 %Display the transfer function
